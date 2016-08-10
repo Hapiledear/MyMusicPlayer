@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+   >
+
+    <TextView
+        android:id="@+id/txt_musicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="歌曲名：" />
+
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnMusicStateChange"
+        android:text="暂停"
+        android:layout_below="@+id/seekBar"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btn_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnUpMusic"
+        android:text="上一首"
+        android:layout_alignTop="@+id/btn_pause"
+        android:layout_toStartOf="@+id/btn_pause" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnNextMusic"
+        android:text="下一首"
+        android:layout_alignTop="@+id/btn_pause"
+        android:layout_toEndOf="@+id/btn_pause" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:id="@+id/space"
+        android:layout_below="@+id/txt_musicName"
+        android:layout_alignParentStart="true" />
+
+
+
+    <TextView
+        android:id="@+id/txt_ntime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nowTime"
+        android:layout_alignTop="@+id/seekBar"
+        android:layout_alignParentStart="true" />
+
+
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/space"
+        android:layout_toStartOf="@+id/txt_tTime"
+        android:layout_toEndOf="@+id/txt_ntime"/>
+
+    <TextView
+        android:id="@+id/txt_tTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="totelTime"
+        android:layout_alignTop="@+id/seekBar"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单曲循环"
+        android:id="@+id/btn_play_mode"
+        android:onClick="OnPlayStateChange"
+        android:layout_below="@+id/txt_ntime"
+        android:layout_toStartOf="@+id/btn_up" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="复位"
+        android:id="@+id/btn_clear"
+        android:onClick="OnMusicRestart"
+        android:layout_alignTop="@+id/btn_next"
+        android:layout_toEndOf="@+id/btn_next"
+        android:layout_alignBottom="@+id/btn_play_mode" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:id="@+id/frameLayout"
+        android:layout_below="@+id/btn_play_mode">
+
+        <com.example.playerwithservice.lyric.LrcView
+            android:id="@+id/lrc_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|top" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/playing_music_list"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal|top" />
+    </FrameLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="list"
+        android:id="@+id/btn_list"
+        android:onClick="OnListMenu"
+        android:layout_above="@+id/space"
+        android:layout_toEndOf="@+id/seekBar" />
+
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PlayerWithService</string>
+    <string name="music_artist">artist</string>
+</resources>

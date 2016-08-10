@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normal"
+    android:orientation="vertical" >
+
+  <include layout="@layout/actionbar_layout"/>
+
+
+    <LinearLayout
+        android:id="@+id/online_loading"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <ImageView
+            android:id="@+id/online_loading_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/loading" />
+
+        <TextView
+            android:id="@+id/online_loading_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="好音乐马上就来..."
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/online_network_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:src="@drawable/error_offline"/>
+
+    <ListView
+        android:id="@+id/online_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/line_h"
+        android:scrollbars="none"
+        android:visibility="gone" />
+
+</LinearLayout>

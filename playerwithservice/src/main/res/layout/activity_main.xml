@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="本地音乐"
+            android:id="@+id/rb_allMusic"
+            android:button="@null"
+            android:checked="true"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="专辑分类"
+            android:id="@+id/rb_album"
+            android:button="@null"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="歌手分类"
+            android:button="@null"
+            android:id="@+id/rb_artist"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/show_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+</LinearLayout>
